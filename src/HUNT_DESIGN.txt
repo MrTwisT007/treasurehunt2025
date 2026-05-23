@@ -1,0 +1,81 @@
+An executable file hiding several layers of puzzles for ***'s birthday
+
+Layer 1:
+- Figure out there is a byte to flip with a hex editor from 0xa5 to 0x5a. Doing so and then rerunning the executable will cause it to dump hex contents of layer 2 into a text file. DTMF hint at end of intro script required as part of layer 1 solution. DTMF key must be input at the prompt to display a limerick hint. (DTMF key: cba525a# is a hint in itself "Change Byte a5 2 5a")
+- DTMF key provided at end of introduction script
+- Limerick hint:
+You must run on your machine
+A wizard that can see sixteen
+Inside this executable
+Instructions hide for you to do
+Look for keyword meanings like
+"Invert" or "mirror" and alike
+It is hiding in plaintext
+Use your wits to find what's next
+
+Layer 2:
+- A mixture of text and hex data in a text file. Text is some lore to keep intrigue going. Following HEX dump should be converted into a file using a hex editor. The file shall be an image with layer 3 obfuscated by being placed after the image's EOI
+- Essentially a dual-type file: a jpeg with an zip tacked on to the end - can be viewed as a jpeg, but can also be opened with 7zip
+- A hint will be provided to look for magic numbers, which should hint at what type of file it is to start
+
+Layer 3:
+- This should be the final and hardest layer to solve. A red herring of some sort must be present to misdirect. Right now the idea is that it would be a literal image of a red herring
+- An archive with three files in it: FILE1, FILE2 and FILE4. The "missing" FILE3 shall be hidden
+- FILE3 shall be a 7z archive. It shall be passworded and the contents shall be the steam keys. This file shall not be visible in the archive and be tacked onto one of the other files.
+- FILE1 shall be a zip file with an image tacked on after EOI. The archive will be most visible since it can be opened immediately and shall contain ciphertext with a message and password for FILE3. The image shall contain the cipherkey for the text in the archive
+- FILE2 shall contain the red herring after the EOI and serve purely to distract
+- FILE4 shall be an image with a text printout of hex tacked onto the end. This would require double conversion from hex to ascii, which is hex again. This will be FILE3
+
+Key concepts:
+- Payloads should be obfuscated such that the unlocking a layer should reveal the next layer entirely. Payloads must be obfuscated to prevent snooping with a hex editor and directly copying the contents without properly solving the layer
+- Steganography will be used as the key element for the hunt.
+- An introduction shall accompany the first layer. It will be a mock story of encountering some sort of deep conspiracy that goes several layers deep. The first layer is provided by the whistleblower who's seen whats at the bottom, but the recipient must solve for himself for "reasons (tbd, e.g. the whistleblower is complicit and had to hide it himself)". A hint to the solution of the first layer and general concepts shall be included here.
+- Each layer should also provide some sort of initial direction and starting hint. A continuation of the "lore" will also be included in parts.
+- Hunt must be largely solvable without requiring any specific tooling, so generic hex editors, well known cyphers, etc. Steganography is limited this way so more cool things are not allowed (e.g. zip file shenanigans with central directory shifting and hiding binary data blobs)
+- As a bonus, after solving the puzzle the source to the whole project shall be provided.
+
+Tooling required:
+- DONE Will need to write an obfuscation tool to hide the payloads. Something as simple as interleaving the data and shifting each half by some amount in opposite directions should be enough to hide it
+- DONE Will need to write a Makefile to compile the whole thing reliably and run any middleware/scripting on some of the constituent payload, e.g. if I change a text payload and need to strip any bytes I'd rather just re-run the make, rather than keep manually running separate compilation and scripting commands
+
+TODOs:
+- DONE/FIXED De/Obfuscation might have a bug where strings are not null-terminated
+- DONE       De/Obfuscation tool/lib scope expansion - argument driven scheme (XOR, offset) and padding (zero, random, none)
+- DONE Record and refine intro script
+
+Time permitted (scope expansion):
+- Fun responses to text input in layer 1
+- Last byte of DTMF is XOR key to deobfuscate limerick hint
+- DONE Layer 3 wraps back to layer 1 in some manner. Layer 3 goal informs of another secret to get the project source
+
+Resources:
+DTMF:
+https://nhollmann.github.io/DTMF-Tool/
+https://www.dcode.fr/dtmf-code
+https://www.dcode.fr/vigenere-cipher
+TTS:
+https://fasthub.net/
+https://www.tetyys.com/SAPI4/
+
+Introduction script:
+Right, listen, I don't have much time to record this. By the time you get this I'm probably gonna be either living out the remainder of my days under a new name in Thailand, or rotting in a ditch in the most forgotten corner of this god forsaken planet. But after all I've been through - neither of those options are that different from each other.
+Listen carefully. What I've encountered goes to the deepest bowels of 9th layer of special pseudo-government hell. The stuff they have there makes flat earthers look sane. It makes the SCP wiki look like something you'd teach at school as part of general world learning. Nothing's as it seems and you can forget whatever notion you have in your head of the world order.
+Look, I had to... hide this all. I'm not exactly innocent, but you gotta crack some eggs, heads and knuckles to get to the blood omelet I found myself in. I'm sorry, I can't give you the information in plain text - I had to obscure and hide this behind lock and key as much as I could.
+Here's the rules:
+1) There's three layers in this Gordian knot I'm giving to you. You will know explicitly when you have solved one and progress to the next
+2) You will need to use tools to allow you to see things you normally don't. Hex editors, decompilers, debuggers are all fair game for the most part
+3) Solving the first layer involves triggering an unlocking mechanism - the data is obfuscated. Don't attempt to rip out the binary blob and de-obfuscate yourself. Not only is it against the rules, but *they*... will know
+__more?
+(Last point, interrupted)) You have to...
+...
+*external noises, banging*
+Shit, no time, gotta leave. Look, it's in your hands now, you'll figure it out. There's a hint at the end of this audio log. Blow this thing wide open. Triggering scriiiiiipt... now. See you in the next one. 
+*crack of headset taken off and put down*
+*TTS[
+Executing final good night protocol.
+Complete.
+Cya later, Rat King.
+Initializing uninvited party breaker-box surprise. T minus 10 seconds.
+Sending final outcry. Payload transmitting. Good luck, Doctor
+]*TTS
+__DTMF encoded hint

@@ -1,0 +1,3 @@
+Layer 1 unlocked.
+Layer 2 contents written to file.
+Displaying contents

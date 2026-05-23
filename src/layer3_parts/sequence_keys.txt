@@ -1,0 +1,10 @@
+With these tokens, you can now enter any portal of your choosing and visit incredible places, experience many things, live lives some may only dream of.
+Congratulatons, you have hunted well and overcome this (hopefully not too hard, not too easy, but juuuuust right) challenge!
+
+[REDACTED]
+[REDACTED]
+[REDACTED]
+[REDACTED]
+[REDACTED]
+
+P.S. For a little extra surprise, change "Flip" to "Plip" in the executable and re-run it to see what makes it all tick! Look for src.zip in the same directory. Same password
