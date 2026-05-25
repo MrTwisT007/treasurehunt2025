@@ -3,12 +3,12 @@ This repo contains the source for a cryptography/hacking treasure hunt I made fo
 It's written in C and contains some steganographic trickery with file magic numbers and other quirky behavious.
 
 # What's in it?
-The repo contains the source code, makefile and all asset files to compile the executable containing the puzzle. There is a design doc (HUNT_DESIGN.txt) I wrote during the period I was working on this. The design doc implemented most of the ideas in the final project, with small deviations.
+The repo contains the source code, makefile and all asset files to compile the executable containing the puzzle. There is a design doc (HUNT_DESIGN.txt) I wrote during the period I was working on this. The design doc implemented most of the ideas in the final project, with small deviations. The assets are located in the `layer*_parts` folders.
 There is a simple obfuscator and deobfuscator pair which can mangle any data at the byte level. I wrote it to hide the data and make it harder to parse any signatures.
 The final solution revealed some gift codes (redacted) as well as the entire source code of the puzzle contained within itself.
 
 # How does it work?
-The original hunt executable was provided with an audio recording containing some silly plot about conspiracies and a DTMF encoded byte string at the end. The puzzle/executable itself is in three layers, with each building on top of the previous ones' principles. As the hunter progresses through the hunt more of the lore is revealed about wormholes and portals. This is loosely referencing the game distribution platform Steam, for which the solution provided gift codes.
+The original hunt executable was provided with an audio recording (not included, but script can be found in the design doc) containing some silly plot about conspiracies and a DTMF encoded byte string at the end. The puzzle/executable itself is in three layers, with each building on top of the previous ones' principles. As the hunter progresses through the hunt more of the lore is revealed about wormholes and portals. This is loosely referencing the game distribution platform Steam, for which the solution provided gift codes.
 
 # How do I build it?
 <font color="red">WARNING! This project creates an executable with embedded obfuscated binary data. This can trigger anti-malware and security software</font>
