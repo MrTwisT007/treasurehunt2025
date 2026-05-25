@@ -34,7 +34,7 @@ The usage is:
 
 * `INPUT_FILENAME`: self explanatory
 * `OUTPUT_FILENAME`: self expanatory
-* `PADDING`: `n, r, o` Pad the output data where every odd byte is `r`andom or zer`o`. Or do`n`'t pad the output
+* `PADDING`: `n, r, o` Pad the output data where every odd byte is `r`andom or `z`ero. Or do`n`'t pad the output
 * `SCHEME`: `o, x` Every data byte can be `o`ffset or `x`or'ed.
 * `EXTRA`: If `SCHEME` is `o`ffset, then two values are expected and will be added to every data byte in alternating pairs (padding is ignored). If `SCHEME` is `x`or, then one value is expected and will be XOR'd with every data byte
 
