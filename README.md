@@ -36,7 +36,7 @@ The usage is:
 * `OUTPUT_FILENAME`: self expanatory
 * `PADDING`: `n, r, o` Pad the output data where every odd byte is `r`andom or `z`ero. Or do`n`'t pad the output
 * `SCHEME`: `o, x` Every data byte can be `o`ffset or `x`or'ed.
-* `EXTRA`: If `SCHEME` is `o`ffset, then two values are expected and will be added to every data byte in alternating pairs (padding is ignored). If `SCHEME` is `x`or, then one value is expected and will be XOR'd with every data byte
+* `EXTRA`: If `SCHEME` is `o`ffset, then two values are expected and will be added to every data byte in alternating pairs (padding bytes are not affected). If `SCHEME` is `x`or, then one value is expected and will be XOR'd with every data byte
 
 # Intended hunt solution
 Running the executable in a shell will prompt for an entry.
